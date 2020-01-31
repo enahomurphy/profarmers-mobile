@@ -8,9 +8,8 @@ import styles, {
   AuthButtons,
   SocialButton,
 } from './styles';
-import * as screens from 'config/screens';
 
-const Signup = ({theme, navigation}) => {
+const Complete = ({theme}) => {
   return (
     <ContainerWrapper>
       <ContentWrapper contentContainerStyle={styles.contentWrapper}>
@@ -30,11 +29,7 @@ const Signup = ({theme, navigation}) => {
               <SocialButton block theme={theme} bgColor="googleRed">
                 <Text>Facebook</Text>
               </SocialButton>
-              <SocialButton
-                onPress={() => navigation.navigate(screens.SIGNUP_REGSITER)}
-                block
-                theme={theme}
-                bgColor="emailGren">
+              <SocialButton block theme={theme} bgColor="emailGren">
                 <Text>Email</Text>
               </SocialButton>
             </AuthButtons>
@@ -45,8 +40,8 @@ const Signup = ({theme, navigation}) => {
   );
 };
 
-Signup.defaultProps = {
+Complete.defaultProps = {
   theme: 'light',
 };
 
-export default Signup;
+export default Complete;

@@ -9,9 +9,17 @@ export const Title = styled(Text)`
   color: ${({theme}) => color[theme].headerText};
 `;
 
-export const Paragraph = styled(Text)`
+export const Paragraph = styled(Title)`
   font-size: 16px;
   line-height: 26px;
   font-weight: normal;
   color: ${({theme}) => color[theme].headerText};
 `;
+
+Title.defaultProps = {
+  theme: 'light',
+};
+
+Paragraph.defaultProps = {
+  theme: 'light',
+};
