@@ -10,7 +10,6 @@ import styles, {
 } from './styles';
 
 const Signup = ({theme}) => {
-  console.log(theme, 'sss');
   return (
     <ContainerWrapper>
       <ContentWrapper contentContainerStyle={styles.contentWrapper}>
