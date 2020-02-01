@@ -1,27 +1,37 @@
 import React from 'react';
 import {Title, Paragraph} from 'components/Text';
-import {Container, Header, Content, Form, View, Body} from 'native-base';
+import {Form, View, Button, Text, Content, Container} from 'native-base';
 
 import Logo from 'components/Icons/Logo';
 import {InputWithLabel} from 'components/Form';
-import styles, {ContainerWrapper, ContentWrapper} from './styles';
+import styles, {LogoView, TextView, ParagraphSigninText} from './styles';
 
 const Register = ({theme}) => {
   return (
     <Container>
       <Content>
-        <View>
-          <Title>Create an account</Title>
-          <View>
-            <Paragraph>Have an account</Paragraph>
-            <Paragraph>Sign In</Paragraph>
+        <View style={styles.contentWrapper}>
+          <View style={styles.viewWrapper}>
+            <LogoView>
+              <Logo />
+            </LogoView>
+            <TextView>
+              <Title>Create an account</Title>
+              <View style={styles.viewTextWrapper}>
+                <Paragraph>Don't have an account?</Paragraph>
+                <ParagraphSigninText>Sign In</ParagraphSigninText>
+              </View>
+            </TextView>
+            <Form>
+              <InputWithLabel label="Full Name" />
+              <InputWithLabel label="Email" />
+              <InputWithLabel label="Password" />
+              <Button block style={styles.formButton}>
+                <Text>SIGN UP</Text>
+              </Button>
+            </Form>
           </View>
         </View>
-        <Form>
-          <InputWithLabel label="Full Name" />
-          <InputWithLabel label="Email" />
-          <InputWithLabel label="Password" />
-        </Form>
       </Content>
     </Container>
   );

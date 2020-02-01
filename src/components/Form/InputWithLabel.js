@@ -1,18 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Item, Label, Input} from 'native-base';
+import {Item, Label, Input, Icon} from 'native-base';
+
+import color from 'config/color';
 
 const StyledItem = styled(Item)`
-  border-color: red;
+  background: ${color.light.inputBackground};
+  padding-bottom: 10px;
+  height: 60px;
 `;
 
-const CustomInput = ({label}) => {
+const CustomInput = ({label, success}) => {
   return (
-    <StyledItem floatingLabel last>
+    <StyledItem success={success} floatingLabel last>
       <Label>{label}</Label>
       <Input />
+      {success && <Icon name="checkmark-circle" />}
     </StyledItem>
   );
+};
+
+CustomInput.defaultProps = {
+  success: false,
 };
 
 export default CustomInput;

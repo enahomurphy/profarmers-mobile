@@ -5,7 +5,7 @@ import color from 'config/color';
 export const Title = styled(Text)`
   font-size: 24px;
   line-height: 30px;
-  font-weight: 500;
+  font-weight: bold;
   color: ${({theme}) => color[theme].headerText};
 `;
 

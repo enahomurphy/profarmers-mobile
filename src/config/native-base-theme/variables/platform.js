@@ -1,9 +1,10 @@
 // @flow
 
 import color from 'color';
-import { Platform, Dimensions, PixelRatio } from 'react-native';
+import {Platform, Dimensions, PixelRatio} from 'react-native';
+import {light} from 'config/color';
 
-import { PLATFORM } from './commonColor';
+import {PLATFORM} from './commonColor';
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
@@ -226,8 +227,8 @@ export default {
 
   // InputGroup
   inputFontSize: 17,
-  inputBorderColor: '#D9D5DC',
-  inputSuccessBorderColor: '#2b8339',
+  inputBorderColor: light.inputBorder,
+  inputSuccessBorderColor: light.base,
   inputErrorBorderColor: '#ed2f2f',
   inputHeightBase: 50,
   get inputColor() {
@@ -322,13 +323,13 @@ export default {
       topInset: 24,
       leftInset: 0,
       rightInset: 0,
-      bottomInset: 34
+      bottomInset: 34,
     },
     landscape: {
       topInset: 0,
       leftInset: 44,
       rightInset: 44,
-      bottomInset: 21
-    }
-  }
+      bottomInset: 21,
+    },
+  },
 };
