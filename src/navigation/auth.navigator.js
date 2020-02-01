@@ -7,7 +7,7 @@ import CompleteScreen from 'screens/Auth/Signup/Complete';
 import * as screens from 'config/screens';
 
 const AuthNavigatorConfig = {
-  initialRouteName: screens.SIGNUP_COMPLETE,
+  initialRouteName: screens.LOGIN,
   header: null,
   headerMode: 'none',
 };

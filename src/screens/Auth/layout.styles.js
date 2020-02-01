@@ -3,6 +3,8 @@ import {View} from 'native-base';
 import styled from 'styled-components/native';
 import {Dimensions} from 'react-native';
 
+import {Paragraph} from 'components/Text';
+
 export const LogoView = styled(View)`
   justify-content: center;
   align-items: center;
@@ -15,6 +17,11 @@ export const TextView = styled(View)`
   text-transform: capitalize;
 `;
 
+export const ParagraphSigninText = styled(Paragraph)`
+  margin-left: 5px;
+  color: #686666;
+`;
+
 export default StyleSheet.create({
   contentWrapper: {
     justifyContent: 'center',
@@ -24,7 +31,6 @@ export default StyleSheet.create({
   viewWrapper: {
     alignSelf: 'center',
     width: Dimensions.get('window').width * 0.9,
-    height: Dimensions.get('window').height * 0.9,
   },
   viewTextWrapper: {
     justifyContent: 'center',
