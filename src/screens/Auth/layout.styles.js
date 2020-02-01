@@ -20,12 +20,11 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
     flex: 1,
-    height: Dimensions.get('window').height * 0.9,
   },
   viewWrapper: {
     alignSelf: 'center',
     width: Dimensions.get('window').width * 0.9,
-    marginBottom: 40,
+    height: Dimensions.get('window').height * 0.9,
   },
   viewTextWrapper: {
     justifyContent: 'center',
@@ -37,5 +36,9 @@ export default StyleSheet.create({
   title: {
     color: '#47682C',
     marginBottom: 10,
+  },
+  content: {
+    flex: 1,
+    height: Dimensions.get('window').height,
   },
 });

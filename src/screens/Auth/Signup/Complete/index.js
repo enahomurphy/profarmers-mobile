@@ -1,35 +1,38 @@
 import React from 'react';
-import {Text} from 'native-base';
 import {Paragraph} from 'components/Text';
+import {Form, Button, Text} from 'native-base';
 
 import AuthLayout from '../../AuthLayout';
-import {AuthButtons, SocialButton} from './styles';
+import {InputWithLabel, TextArea, Picker} from 'components/Form';
+import {navigation} from 'config/interface';
+import styles from '../../layout.styles';
 
 type Props = {
-  theme: String,
+  ...navigation,
+  theme: string,
 };
 
 const Complete = (props: Props) => {
   return (
     <AuthLayout
-      title="JOIN US"
+      title="Complete Profile"
       description={
-        <Paragraph align="center" theme={props.heme}>
-          Unlock opportunities, take control and connect on all things
-          Agriculture
+        <Paragraph>
+          Thank you for signing up please complete your profile to continue
         </Paragraph>
       }>
-      <AuthButtons>
-        <SocialButton block theme={props.theme} bgColor="linkedinBlue">
-          <Text>Linkedin</Text>
-        </SocialButton>
-        <SocialButton block theme={props.theme} bgColor="googleRed">
-          <Text>Facebook</Text>
-        </SocialButton>
-        <SocialButton block theme={props.theme} bgColor="emailGren">
-          <Text>Email</Text>
-        </SocialButton>
-      </AuthButtons>
+      <Form>
+        <InputWithLabel label="phone" />
+        <InputWithLabel label="occupation" />
+        <TextArea rowSpan={5} />
+        <Picker
+          options={[{label: 'hello', value: 'text'}]}
+          placeholder="what best describes you?"
+        />
+        <Button block style={styles.formButton}>
+          <Text>Complete</Text>
+        </Button>
+      </Form>
     </AuthLayout>
   );
 };

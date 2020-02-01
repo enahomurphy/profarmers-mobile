@@ -15,7 +15,7 @@ type Props = {
 const AuthLayout = (props: Props) => {
   return (
     <Container>
-      <Content>
+      <Content contentContainerStyle={styles.content}>
         <View style={styles.contentWrapper}>
           <View style={styles.viewWrapper}>
             <LogoView>

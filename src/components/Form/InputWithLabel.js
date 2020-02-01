@@ -8,13 +8,15 @@ const StyledItem = styled(Item)`
   background: ${color.light.inputBackground};
   padding-bottom: 10px;
   height: 60px;
+  margin-bottom: 20px;
+  margin-top: 0px;
 `;
 
-const CustomInput = ({label, success}) => {
+const CustomInput = ({label, success, ...props}) => {
   return (
     <StyledItem success={success} floatingLabel last>
       <Label>{label}</Label>
-      <Input />
+      <Input {...props} />
       {success && <Icon name="checkmark-circle" />}
     </StyledItem>
   );
