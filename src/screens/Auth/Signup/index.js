@@ -1,52 +1,47 @@
 import React from 'react';
-import {Text, Left, View, Body} from 'native-base';
-import {Title, Paragraph} from 'components/Text';
+import {Text} from 'native-base';
+import {NavigationScreenProp, NavigationState} from 'react-navigation';
 
-import styles, {
-  ContainerWrapper,
-  ContentWrapper,
-  AuthButtons,
-  SocialButton,
-} from './styles';
+import {Paragraph} from 'components/Text';
+import AuthLayout from '../AuthLayout';
+import {AuthButtons, SocialButton} from './styles';
 import * as screens from 'config/screens';
 
-const Signup = ({theme, navigation}) => {
+type Props = {
+  theme: String,
+  navigation: NavigationScreenProp<NavigationState>,
+};
+const Complete = (props: Props) => {
   return (
-    <ContainerWrapper>
-      <ContentWrapper contentContainerStyle={styles.contentWrapper}>
-        <Body style={styles.contentWrapper}>
-          <View style={styles.viewWrapper}>
-            <Left>
-              <Title theme={theme}>Signup</Title>
-              <Paragraph theme={theme}>
-                Unlock opportunities, take control and connect on all things
-                Agriculture
-              </Paragraph>
-            </Left>
-            <AuthButtons>
-              <SocialButton block theme={theme} bgColor="linkedinBlue">
-                <Text>Linkedin</Text>
-              </SocialButton>
-              <SocialButton block theme={theme} bgColor="googleRed">
-                <Text>Facebook</Text>
-              </SocialButton>
-              <SocialButton
-                onPress={() => navigation.navigate(screens.SIGNUP_REGSITER)}
-                block
-                theme={theme}
-                bgColor="emailGren">
-                <Text>Email</Text>
-              </SocialButton>
-            </AuthButtons>
-          </View>
-        </Body>
-      </ContentWrapper>
-    </ContainerWrapper>
+    <AuthLayout
+      title="JOIN US"
+      description={
+        <Paragraph align="center" theme={props.heme}>
+          Unlock opportunities, take control and connect on all things
+          Agriculture
+        </Paragraph>
+      }>
+      <AuthButtons>
+        <SocialButton block theme={props.theme} bgColor="linkedinBlue">
+          <Text>Linkedin</Text>
+        </SocialButton>
+        <SocialButton block theme={props.theme} bgColor="googleRed">
+          <Text>Facebook</Text>
+        </SocialButton>
+        <SocialButton
+          onPress={() => props.navigation.navigate(screens.SIGNUP_REGISTER)}
+          block
+          theme={props.theme}
+          bgColor="emailGren">
+          <Text>Email</Text>
+        </SocialButton>
+      </AuthButtons>
+    </AuthLayout>
   );
 };
 
-Signup.defaultProps = {
+Complete.defaultProps = {
   theme: 'light',
 };
 
-export default Signup;
+export default Complete;

@@ -1,39 +1,35 @@
 import React from 'react';
-import {Title, Paragraph} from 'components/Text';
-import {Form, View, Button, Text, Content, Container} from 'native-base';
+import {Paragraph} from 'components/Text';
+import {Form, Button, Text} from 'native-base';
 
-import Logo from 'components/Icons/Logo';
+import AuthLayout from '../../AuthLayout';
 import {InputWithLabel} from 'components/Form';
-import styles, {LogoView, TextView, ParagraphSigninText} from './styles';
+import {ParagraphSigninText} from './styles';
+import styles from '../../layout.styles';
 
-const Register = ({theme}) => {
+type Props = {
+  theme: string,
+};
+
+const Register = (props: Props) => {
   return (
-    <Container>
-      <Content>
-        <View style={styles.contentWrapper}>
-          <View style={styles.viewWrapper}>
-            <LogoView>
-              <Logo />
-            </LogoView>
-            <TextView>
-              <Title>Create an account</Title>
-              <View style={styles.viewTextWrapper}>
-                <Paragraph>Don't have an account?</Paragraph>
-                <ParagraphSigninText>Sign In</ParagraphSigninText>
-              </View>
-            </TextView>
-            <Form>
-              <InputWithLabel label="Full Name" />
-              <InputWithLabel label="Email" />
-              <InputWithLabel label="Password" />
-              <Button block style={styles.formButton}>
-                <Text>SIGN UP</Text>
-              </Button>
-            </Form>
-          </View>
-        </View>
-      </Content>
-    </Container>
+    <AuthLayout
+      title="Create An Account"
+      description={
+        <React.Fragment>
+          <Paragraph>Don't have an account?</Paragraph>
+          <ParagraphSigninText>Sign In</ParagraphSigninText>
+        </React.Fragment>
+      }>
+      <Form>
+        <InputWithLabel label="Full Name" />
+        <InputWithLabel label="Email" />
+        <InputWithLabel label="Password" />
+        <Button block style={styles.formButton}>
+          <Text>SIGN UP</Text>
+        </Button>
+      </Form>
+    </AuthLayout>
   );
 };
 

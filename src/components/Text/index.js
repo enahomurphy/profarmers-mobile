@@ -14,6 +14,7 @@ export const Paragraph = styled(Title)`
   line-height: 26px;
   font-weight: normal;
   color: ${({theme}) => color[theme].headerText};
+  text-align: ${({align}) => align};
 `;
 
 Title.defaultProps = {
@@ -22,4 +23,5 @@ Title.defaultProps = {
 
 Paragraph.defaultProps = {
   theme: 'light',
+  align: 'left',
 };
