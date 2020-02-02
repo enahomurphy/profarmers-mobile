@@ -4,7 +4,7 @@ import {Form, Button, Text} from 'native-base';
 
 import AuthLayout from '../AuthLayout';
 import {InputWithLabel} from 'components/Form';
-import {navigation} from 'config/interface';
+import {Navigation as navigation} from 'config/interface';
 import styles, {ParagraphSigninText} from '../layout.styles';
 
 type Props = {
