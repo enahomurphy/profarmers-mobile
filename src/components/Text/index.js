@@ -13,7 +13,7 @@ export const Paragraph = styled(Title)`
   font-size: 16px;
   line-height: 26px;
   font-weight: normal;
-  color: ${({theme}) => color[theme].headerText};
+  color: ${({theme}) => color[theme].paragraphText};
   text-align: ${({align}) => align};
 `;
 

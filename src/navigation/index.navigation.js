@@ -1,13 +1,18 @@
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 
 import AuthNavigator from './auth.navigator';
+import FeedNavigator from './feed.navigator';
+import SidebarNavigator from './sidebar.navigator';
+import * as screens from 'config/screens';
 
 const RootNavigator = createSwitchNavigator(
   {
-    Auth: AuthNavigator,
+    [screens.AUTH]: AuthNavigator,
+    [screens.FEED]: FeedNavigator,
+    [screens.SIDEBAR]: SidebarNavigator,
   },
   {
-    initialRouteName: 'Auth',
+    initialRouteName: screens.FEED,
   },
 );
 
