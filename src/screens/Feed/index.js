@@ -4,10 +4,10 @@ import {Container, Content, View} from 'native-base';
 import {FlatList} from 'react-native';
 
 import {Navigation as navigation} from 'config/interface';
-import Header from 'components/Header';
 import {Title} from 'components/Text';
 import FeedItem from 'components/List/FeedItem';
 import Trending from './Trending';
+import Header from 'components/Header';
 
 type Props = {
   ...navigation,

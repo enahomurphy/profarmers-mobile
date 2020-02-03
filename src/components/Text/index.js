@@ -3,9 +3,9 @@ import styled from 'styled-components/native';
 import color from 'config/color';
 
 export const Title = styled(Text)`
-  font-size: 24px;
+  font-size: ${({size}) => size};
   line-height: 30px;
-  font-weight: 600;
+  font-weight: ${({weight}) => weight};
   color: ${({theme}) => color[theme].headerText};
 `;
 
@@ -19,6 +19,8 @@ export const Paragraph = styled(Title)`
 
 Title.defaultProps = {
   theme: 'light',
+  weight: 500,
+  size: '24px',
 };
 
 Paragraph.defaultProps = {
