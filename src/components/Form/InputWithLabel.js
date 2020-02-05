@@ -1,16 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
-import {Item, Label, Input, Icon} from 'native-base';
+import {Label, Input, Icon} from 'native-base';
 
-import color from 'config/color';
-
-const StyledItem = styled(Item)`
-  background: ${color.light.inputBackground};
-  padding-bottom: 10px;
-  height: 60px;
-  margin-bottom: 20px;
-  margin-top: 0px;
-`;
+import {StyledItem} from './styles';
 
 const CustomInput = ({label, success, ...props}) => {
   return (
