@@ -13,3 +13,4 @@ export const DISCUSSION = 'Discussion';
 export const FEED = 'Feed';
 export const TOPIC = 'Topic';
 export const CREATE_TOPIC = 'CreateTopic';
+export const REPLY_TOPIC = 'ReplyTopic';
