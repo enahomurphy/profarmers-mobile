@@ -21,7 +21,7 @@ const StyledItem = styled(Item)`
   background: ${color.light.inputBackground};
   padding-bottom: 10px;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: ${props => (props.end ? 0 : '20px')};
 `;
 
 const StyledIcon = styled(Icon)`
@@ -40,7 +40,7 @@ type Props = {
 const CustomTextArea = (props: Props) => {
   const {success, label} = props;
   return (
-    <StyledItem success={success} last>
+    <StyledItem {...props} success={success} last>
       <StyledLabel>{label}</StyledLabel>
       <StyledTextArea {...props} />
       {success && <StyledIcon name="checkmark-circle" />}

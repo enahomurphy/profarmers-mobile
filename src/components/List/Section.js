@@ -13,6 +13,8 @@ type Props = {
   children: React.Node,
   align: String,
   width: String,
+  marginBottom: String,
+  marginBottom: String,
 };
 
 const Section = (props: Props) => (

@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import {Item, Icon, Picker} from 'native-base';
 
 import color from 'config/color';
+import {StyledItem} from './styles';
 
-const StyledItem = styled(Item)`
-  background: ${color.light.inputBackground};
-  padding-bottom: 10px;
-  padding: 0;
-`;
+// const StyledItem = styled(Item)`
+//   background: ${color.light.inputBackground};
+//   padding-bottom: 10px;
+//   padding: 0;
+// `;
 
 type Option = {
   value: string,
@@ -26,7 +27,7 @@ type Props = {
 const CustomPicker = (props: Props) => {
   const {success, options, placeholder} = props;
   return (
-    <StyledItem success={success} picker>
+    <StyledItem {...props} success={success} picker last>
       <Picker
         mode="dialog"
         iosIcon={<Icon name="arrow-down" />}

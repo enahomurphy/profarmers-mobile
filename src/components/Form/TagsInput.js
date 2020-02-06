@@ -24,12 +24,21 @@ const TagsInput = props => {
     setTag(tags.filter((tagValue, index) => index !== position));
   };
 
+  const onChangeText = text => {
+    props.onChangeText(text);
+    setValue(text);
+  };
+
   return (
     <View>
-      <Input value={value} onChangeText={setValue} />
+      <Input {...props} value={value} onChangeText={onChangeText} />
       <Tags tags={tags} deleteTag={deleteTag} />
     </View>
   );
+};
+
+TagsInput.defaultProps = {
+  onChangeText: () => {},
 };
 
 export default TagsInput;

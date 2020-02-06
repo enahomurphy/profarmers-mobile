@@ -7,7 +7,7 @@ export const StyledItem = styled(Item)`
   background: ${light.inputBackground};
   padding-bottom: 10px;
   height: 60px;
-  margin-bottom: 20px;
+  margin-bottom: ${props => (props.end ? 0 : '20px')};
   margin-top: 0px;
 `;
 

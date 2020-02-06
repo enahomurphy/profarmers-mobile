@@ -5,7 +5,7 @@ import {StyledItem} from './styles';
 
 const CustomInput = ({label, success, ...props}) => {
   return (
-    <StyledItem success={success} floatingLabel last>
+    <StyledItem {...props} success={success} floatingLabel last>
       <Label>{label}</Label>
       <Input {...props} />
       {success && <Icon name="checkmark-circle" />}
