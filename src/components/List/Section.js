@@ -7,6 +7,8 @@ const SectionWrapper = styled(Body)`
   width: ${({width}) => width};
   margin-top: ${({marginTop}) => marginTop};
   margin-bottom: ${({marginBottom}) => marginBottom};
+  flex-direction: ${({flexDirection}) => flexDirection};
+  justify-content: ${({justify}) => justify};
 `;
 
 type Props = {
@@ -14,7 +16,8 @@ type Props = {
   align: String,
   width: String,
   marginBottom: String,
-  marginBottom: String,
+  marginTop: String,
+  direction: String,
 };
 
 const Section = (props: Props) => (
@@ -23,9 +26,11 @@ const Section = (props: Props) => (
 
 Section.defaultProps = {
   align: 'flex-start',
+  justify: 'flex-start',
   width: '91%',
   marginTop: '0px',
   marginBottom: '0px',
+  flexDirection: 'column',
 };
 
 export default Section;

@@ -14,3 +14,6 @@ export const FEED = 'Feed';
 export const TOPIC = 'Topic';
 export const CREATE_TOPIC = 'CreateTopic';
 export const REPLY_TOPIC = 'ReplyTopic';
+
+export const FORUM = 'Forum';
+export const FORUM_LIST = 'ForumList';
