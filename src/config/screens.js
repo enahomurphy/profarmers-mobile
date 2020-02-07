@@ -17,3 +17,4 @@ export const REPLY_TOPIC = 'ReplyTopic';
 
 export const FORUM = 'Forum';
 export const FORUM_LIST = 'ForumList';
+export const FORUM_CREATE = 'ForumCreate';
