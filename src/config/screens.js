@@ -16,5 +16,6 @@ export const CREATE_TOPIC = 'CreateTopic';
 export const REPLY_TOPIC = 'ReplyTopic';
 
 export const FORUM = 'Forum';
-export const FORUM_LIST = 'ForumList';
-export const FORUM_CREATE = 'ForumCreate';
+export const FORUM_TOPICS = 'ForumTopics';
+export const LIST_FORUM = 'ForumList';
+export const CREATE_FORUM = 'ForumCreate';

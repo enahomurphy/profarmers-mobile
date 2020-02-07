@@ -11,7 +11,7 @@ type Props = {
   ...navigation,
 };
 
-const Topic = (props: Props) => {
+const CreateForum = (props: Props) => {
   return (
     <Container>
       <Header />
@@ -40,4 +40,4 @@ const Topic = (props: Props) => {
   );
 };
 
-export default Topic;
+export default CreateForum;
