@@ -10,6 +10,8 @@ const drawerScreens = new Set([
   screens.PROFILE,
   screens.MESSAGE,
   screens.SETTING,
+  screens.LIST_FORUM,
+  screens.DISCUSSION,
 ]);
 
 const Sidebar = props => {

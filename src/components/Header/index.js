@@ -37,6 +37,7 @@ type Props = {
   placeholder?: String,
   title: String,
   onSearchChange: () => {},
+  back: Boolean,
 };
 
 const CustomHeader = (props: Props) => {
@@ -48,7 +49,9 @@ const CustomHeader = (props: Props) => {
   }, [searchBar]);
 
   const openDrawer = () => {
-    navigator.dispatch(DrawerActions.toggleDrawer());
+    props.back
+      ? navigator.goBack()
+      : navigator.dispatch(DrawerActions.toggleDrawer());
   };
 
   return (
@@ -58,7 +61,7 @@ const CustomHeader = (props: Props) => {
         <Fragment>
           <Left>
             <Button onPress={openDrawer} transparent>
-              <StyledIcon name="menu" />
+              <StyledIcon name={props.back ? 'arrow-back' : 'menu'} />
             </Button>
           </Left>
           <Body>
@@ -95,6 +98,7 @@ CustomHeader.defaultProps = {
   searchBar: false,
   placeholder: 'Search',
   onSearchChange: () => {},
+  back: false,
 };
 
 export default CustomHeader;

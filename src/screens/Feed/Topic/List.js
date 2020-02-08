@@ -1,19 +1,18 @@
 import React from 'react';
-import {Container, Content, View} from 'native-base';
+import {Content, View} from 'native-base';
 import {FlatList} from 'react-native';
 
 import {Navigation as navigation} from 'config/interface';
 import {Title, Paragraph} from 'components/Text';
 import {UserInfo, Section, Review} from 'components/List';
-import Header from 'components/Header';
+import Layout from 'components/Layout';
 
 type Props = {
   ...navigation,
 };
 
 const Topic = (props: Props) => (
-  <Container>
-    <Header />
+  <Layout {...props} back>
     <FlatList
       data={Array(20)
         .fill(1)
@@ -39,7 +38,7 @@ const Topic = (props: Props) => (
         </Content>
       }
     />
-  </Container>
+  </Layout>
 );
 
 export default Topic;

@@ -1,11 +1,11 @@
 import React from 'react';
-import {Container, Content, Form, Text, Button} from 'native-base';
+import {Content, Form, Text, Button} from 'native-base';
 
 import {Navigation as navigation} from 'config/interface';
 import {Title, Paragraph} from 'components/Text';
 import {Section} from 'components/List';
-import Header from 'components/Header';
 import {InputWithLabel, TextArea, TagsInput} from 'components/Form';
+import Layout from 'components/Layout';
 
 type Props = {
   ...navigation,
@@ -13,8 +13,7 @@ type Props = {
 
 const CreateForum = (props: Props) => {
   return (
-    <Container>
-      <Header />
+    <Layout {...props}>
       <Content>
         <Section marginTop="30px" marginBottom="30px">
           <Title>Create New Forum</Title>
@@ -36,7 +35,7 @@ const CreateForum = (props: Props) => {
           </Form>
         </Section>
       </Content>
-    </Container>
+    </Layout>
   );
 };
 

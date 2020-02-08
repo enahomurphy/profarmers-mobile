@@ -1,12 +1,13 @@
 import React, {Fragment, useState} from 'react';
-import {Container, Content, View, Form, Text, Radio, Button} from 'native-base';
+import {Content, View, Form, Text, Radio, Button} from 'native-base';
 import {StyleSheet, TouchableOpacity} from 'react-native';
 
 import {Navigation as navigation} from 'config/interface';
 import {Title, Paragraph} from 'components/Text';
 import {Section} from 'components/List';
-import Header from 'components/Header';
 import {InputWithLabel, TextArea, TagsInput, Picker} from 'components/Form';
+import Layout from 'components/Layout';
+
 type Props = {
   ...navigation,
 };
@@ -27,8 +28,7 @@ const styles = StyleSheet.create({
 const Topic = (props: Props) => {
   const [addFourm, setAddForum] = useState(false);
   return (
-    <Container>
-      <Header />
+    <Layout {...props}>
       <Content>
         <Section marginTop="30px" marginBottom="30px">
           <Title>Add Topic</Title>
@@ -80,7 +80,7 @@ const Topic = (props: Props) => {
           </Form>
         </Section>
       </Content>
-    </Container>
+    </Layout>
   );
 };
 

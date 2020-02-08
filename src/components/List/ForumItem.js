@@ -7,6 +7,7 @@ import {Title} from 'components/Text';
 
 type Props = {
   title: Boolean,
+  onPress: () => {},
 };
 
 const StyledBody = styled(Body)`
@@ -20,7 +21,7 @@ const StyleTitle = styled(View)`
 
 const FeedItem = (props: Props) => {
   return (
-    <ListItem avatar onPress={() => console.log('I was pressed')}>
+    <ListItem avatar onPress={props.onPress}>
       <StyledBody>
         <Title size="16px">
           Poultry and fish farming in the southern parts of Africa{' '}
@@ -31,6 +32,10 @@ const FeedItem = (props: Props) => {
       </StyledBody>
     </ListItem>
   );
+};
+
+FeedItem.defaultProps = {
+  onPress: () => {},
 };
 
 export default FeedItem;
